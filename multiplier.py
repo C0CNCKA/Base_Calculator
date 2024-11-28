@@ -13,7 +13,7 @@ def sum(num1, num2):
     for i in range(max(len(num1), len(num2))-1, -1, -1):
         if int(num1[i]) + int(num2[i]) + num >= 10:
             num, num_ = divmod(int(num1[i]) + int(num2[i])+ num, 10)
-            result = str(num_) + str(num) + result #Тут хуйня переделывай
+            result = str(num_) + str(num) + result #Тут фигня переделывай
         else:
             result = str(int(num1[i]) + int(num2[i]) + num) + result #И тут тоже
 
