@@ -3,15 +3,21 @@ def sum(num1, num2):
     num2 = str(num2)
     result = ''
     num, num_ = 0, 0
+    if len(num1) > len(num2): #Выравнивание кол-ва знаков
+        for i in range(len(num1)-len(num2)):
+            num2 = '0' + num2
+    elif len(num1) < len(num2):               
+        for i in range(len(num2)-len(num1)):
+            num1 = '0' + num1
+    print(f'{num1} + {num2}')
     for i in range(max(len(num1), len(num2))-1, -1, -1):
         if int(num1[i]) + int(num2[i]) + num >= 10:
-            num, num_ = divmod(num1[i] + num2[i]+ num, 10)
-            result = str(num_) + result
+            num, num_ = divmod(int(num1[i]) + int(num2[i])+ num, 10)
+            result = str(num_) + str(num) + result #Тут хуйня переделывай
         else:
-            result = str(int(num1[i]) + int(num2[i]) + num) + result
-    return result
+            result = str(int(num1[i]) + int(num2[i]) + num) + result #И тут тоже
 
-print(sum(9,2))
+print(sum(999,2))
 
 
 
